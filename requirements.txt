@@ -1,0 +1,12 @@
+torch
+numpy
+pandas
+Pillow
+matplotlib
+PyYAML
+tqdm
+transformers
+tokenizers
+sacrebleu
+grad-cam
+

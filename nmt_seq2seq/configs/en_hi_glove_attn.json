@@ -1,0 +1,53 @@
+{
+  "experiment_name": "en_hi_glove_attn",
+  "output_dir": "outputs/en_hi_glove_attn",
+  "data": {
+    "train_path": "data/translation/Hindi_train.csv",
+    "dev_path": "data/translation/Hindi_dev.csv",
+    "test_path": "data/translation/Hindi_public_test.csv",
+    "source_column": "source",
+    "target_column": "translated",
+    "cleanup": {
+      "strip_translate_prompt": true,
+      "normalize_whitespace": true,
+      "lowercase_source": false,
+      "lowercase_target": false
+    }
+  },
+  "source": {
+    "type": "word",
+    "max_length": 96,
+    "min_freq": 1,
+    "max_vocab_size": 40000,
+    "embedding_dim": 100,
+    "glove_path": "glove.6B.zip",
+    "lowercase": true
+  },
+  "target": {
+    "max_length": 96,
+    "vocab_size": 5000
+  },
+  "model": {
+    "use_attention": true,
+    "encoder_hidden_size": 256,
+    "encoder_layers": 1,
+    "decoder_hidden_size": 512,
+    "target_embedding_dim": 256,
+    "dropout": 0.2
+  },
+  "train": {
+    "batch_size": 64,
+    "epochs": 20,
+    "learning_rate": 0.001,
+    "teacher_forcing": {
+      "type": "constant",
+      "value": 0.6,
+      "k": 8
+    },
+    "eval_beam_size": 1
+  },
+  "evaluation": {
+    "beam_sizes": [1],
+    "max_decode_steps": 96
+  }
+}

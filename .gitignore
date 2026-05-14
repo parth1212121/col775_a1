@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+outputs/
+artifacts/
+hf_assets/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+.DS_Store
+data/
+datasets/
+*.zip

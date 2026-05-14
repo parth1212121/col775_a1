@@ -1,0 +1,6 @@
+torch
+numpy
+Pillow
+matplotlib
+PyYAML
+grad-cam
