@@ -1,5 +1,7 @@
 # Deep Learning Systems: Vision and Neural Machine Translation
 
+Author: Parth Verma
+
 This repository collects two production-style deep learning pipelines built in PyTorch:
 
 - **Image classification and interpretability**: a from-scratch ResNet-18 training stack with custom normalization layers, modern augmentation options, checkpointing, metrics, and Grad-CAM visual explanations.
